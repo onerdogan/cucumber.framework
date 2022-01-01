@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="3.304">
-    <testcase classname="US1012 Kullanici Concort Hotel database'ini test eder" name="TC18 Concort Hotel Database Read Test" time="3.081">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.303">
+    <testcase classname="Api Data Okuma" name="Apiden Data Alma ve Onaylama" time="0.062">
         <system-out>
-            <![CDATA[Given kullanici databaseye baglanir.........................................passed
-Then kullanici "tHOTELROOM" tablosundaki "Price" verilerini alir............passed
-And kullanici "Price" sutunundaki verileri okur ve istedigi islemi yapar....passed
+            <![CDATA[* Kullanici Api end pointe gidecek "https://www.gmibank.com/api/tp-customers?=size=2000" datalari alacak.passed
+* Kullanici musteri datalarini alir.........................................passed
+* Kullanici aldigi datalari kaydeder........................................passed
+* Kullanici Customer datalarini onaylar.....................................passed
 ]]>
         </system-out>
     </testcase>

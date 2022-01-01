@@ -1,81 +1,117 @@
 [
   {
-    "line": 1,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T21:18:00.720Z",
-        "line": 3,
-        "name": "TC18 Concort Hotel Database Read Test",
+        "line": 7,
+        "name": "Api Datalari Ayarlama",
         "description": "",
-        "id": "us1012-kullanici-concort-hotel-database-ini-test-eder;tc18-concort-hotel-database-read-test",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Kullanici Api end pointe gidecek \"https://www.gmibank.com/api/tp-customers?\u003dsize\u003d2000\" datalari alacak",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.gmibank.com/api/tp-customers?\u003dsize\u003d2000\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.CustomerApiSteps.kullanici_api_end_pointe_gidecek_datalari_alacak(java.lang.String)"
+            },
+            "keyword": "* "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-12-22T15:10:20.714Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Apiden Data Alma ve Onaylama",
+        "description": "",
+        "id": "api-data-okuma;apiden-data-alma-ve-onaylama",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1651823800,
               "status": "passed"
             },
-            "line": 4,
-            "name": "kullanici databaseye baglanir",
+            "line": 11,
+            "name": "Kullanici musteri datalarini alir",
             "match": {
-              "location": "dbStepDefinition.DbStepDefinition.kullanici_databaseye_baglanir()"
+              "location": "stepdefinitions.CustomerApiSteps.kullanici_musteri_datalarini_alir()"
             },
-            "keyword": "Given "
+            "keyword": "* "
           },
           {
             "result": {
-              "duration": 265634800,
               "status": "passed"
             },
-            "line": 5,
-            "name": "kullanici \"tHOTELROOM\" tablosundaki \"Price\" verilerini alir",
+            "line": 12,
+            "name": "Kullanici aldigi datalari kaydeder",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"tHOTELROOM\"",
-                  "offset": 10
-                },
-                {
-                  "val": "\"Price\"",
-                  "offset": 36
-                }
-              ],
-              "location": "dbStepDefinition.DbStepDefinition.kullanici_tablosundaki_verilerini_alir(java.lang.String,java.lang.String)"
+              "location": "stepdefinitions.CustomerApiSteps.kullanici_aldigi_datalari_kaydeder()"
             },
-            "keyword": "Then "
+            "keyword": "* "
           },
           {
             "result": {
-              "duration": 1117502800,
               "status": "passed"
             },
-            "line": 6,
-            "name": "kullanici \"Price\" sutunundaki verileri okur ve istedigi islemi yapar",
+            "line": 13,
+            "name": "Kullanici Customer datalarini onaylar",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Price\"",
-                  "offset": 10
-                }
-              ],
-              "location": "dbStepDefinition.DbStepDefinition.kullanici_sutunundaki_verileri_okur_ve_istedigi_islemi_yapar(java.lang.String)"
+              "location": "stepdefinitions.CustomerApiSteps.kullanici_customer_datalarini_onaylar()"
             },
-            "keyword": "And "
+            "keyword": "* "
           }
         ],
         "tags": [
           {
-            "name": "@Db"
+            "name": "@CustomerApi"
           }
         ]
       }
     ],
-    "name": "US1012 Kullanici Concort Hotel database\u0027ini test eder",
+    "name": "Api Data Okuma",
     "description": "",
-    "id": "us1012-kullanici-concort-hotel-database-ini-test-eder",
+    "id": "api-data-okuma",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/US1012_DbRead.feature",
-    "tags": []
+    "uri": "file:src/test/resources/features/customerApi.feature",
+    "tags": [
+      {
+        "name": "@CustomerApi",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

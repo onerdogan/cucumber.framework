@@ -71,6 +71,24 @@ public class GMIBankPage {
     @FindBy (xpath = "//tbody")
     public WebElement tBodyTumu;
 
+    @FindBy(xpath = "//span[.='User Info']")
+    public WebElement userinfoWebElement;
+
+    @FindBy(xpath = "//select[@id='langKey']")
+    public WebElement languageDropDown;
+
+    @FindBy(id="jh-create-entity")
+    public WebElement createNewCustomer;
+
+    @FindBy(id="search-ssn")
+    public WebElement searchSSN;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement failedMessage;
+
+    @FindBy(xpath = "//button[.='Search']")
+    public WebElement searchButton;
+
 
     public void GMIBankLogin(){
 

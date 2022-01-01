@@ -16,12 +16,12 @@ public class DbStepDefinition {
     ResultSet resultSet;
 
 
-        @Given("kullanici databaseye baglanir")
-        public void kullanici_databaseye_baglanir() throws SQLException {
-
-        connection=DriverManager.getConnection(url,username,password);
-        statement=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-    }
+    @Given("kullanici CHQA database'ine baglanir")
+        public void kullanici_chqa_database_ine_baglanir() throws SQLException {
+//
+//        connection=DriverManager.getConnection(url,username,password);
+//        statement=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+   }
     @Given("kullanici {string} tablosundaki {string} verilerini alir")
     public void kullanici_tablosundaki_verilerini_alir(String table, String field) throws SQLException {
         // SELECT Price FROM tHOTELROOM
@@ -37,7 +37,9 @@ public class DbStepDefinition {
         System.out.println(resultSet.getObject(field).toString());
 
         //resultset.next() bir sonraki objeye gecer, sonraki eleman varsa true, yoksa false doner***
-        System.out.println(resultSet.next());
+         System.out.println(resultSet.next());
+        System.out.println(resultSet.getObject(field).toString());
+        resultSet.next();
         System.out.println(resultSet.getObject(field).toString());
 
         resultSet.last();
@@ -47,16 +49,18 @@ public class DbStepDefinition {
         //eger son elemandaysak, hicbirsey yazdirmaz,
         //while loop calismadan once ilk elemana gitmek gerek
 
-       /*
-        resultSet.first();
-       while (resultSet.next()){//birinci objeye gidildi ama .next sonraki elemana gitti, liste 2. elemandan basladi
-           System.out.println(resultSet.getObject(field).toString());
-       }
 
-        resultSet.absolute(0);
-        while (resultSet.next()) {
-            System.out.println(resultSet.getObject(field).toString());//sona gidince hata veriyuor
-        }*/
+//        resultSet.first();
+//       while (resultSet.next()){//birinci objeye gidildi ama .next sonraki elemana gitti, liste 2. elemandan basladi
+//           System.out.println(resultSet.getObject(field).toString());
+//       }
+
+//        resultSet.absolute(0);
+//        while (resultSet.next()) {
+//            System.out.println(resultSet.getObject(field).toString());//sona gidince hata veriyuor
+//        }
+
+
         //varsa ilk 100 fiyati double liste olarak
         int count=1;
         resultSet.absolute(0);
